@@ -1,0 +1,293 @@
+
+/*
+Para que no se salga del borde que se quiere poner el elemento
+*/
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: lato;
+    src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+    font-weight: bold;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: latog;
+    src: url(../fonts/Lobster/Lobster-Regular.ttf);
+}
+
+@font-face {
+    font-family: quetrial;
+    src: url(../fonts/Questrial/Questrial-Regular.ttf);
+}
+/*
+Para cambiar colores de la letra 
+*/
+.color_cambiar{
+    color:rgb(9, 122, 38) ;
+}
+
+a{
+    font-family:latog;
+    font-weight: bold;
+    color:rgba(17, 128, 36, 0.842) ;
+
+}
+/*
+Para que todo lo que tenga conteiner se agrande a un max
+*/
+.container{
+    max-width: 1400px;
+    margin: auto;
+
+}
+/*
+Para que al seleccionar el menu baje como naturalmente 
+*/
+html{
+    scroll-behavior: smooth;
+}
+.logo{
+    font-family:latog;
+    font-weight: bold
+    
+
+}
+
+/*
+Para que no se salga del borde que se quiere poner el elemento
+*/
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color:rgb(253, 255, 252);
+   
+}
+
+header .logo{
+
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: rgb(52, 122, 38);
+    font-size: 40px;
+}
+
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+
+body {
+    background-color: rgb(215, 231, 177);
+    padding: 20px;
+    font-family: Arial;}
+  
+  
+    /* Center website */
+.main {
+    max-width: 900px;
+    margin: auto;
+}
+  
+h1 {
+    font-size: 50px;
+    word-break: break-all; }
+  
+.row {
+    margin: 20px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 10px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+  }
+  
+  /* Clear floats after rows */ 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+.content {
+    background-color: white;
+    padding: 10px;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+.btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+.btn:hover {
+    background-color: #ddd;
+  }
+  
+.btn.active {
+    background-color: #666666;
+    color: white;}
+
+
+  /* The "show" class is added to the filtered elements */
+  button{
+    font-size: 100%;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(15, 15, 15, 0.5);
+    color: rgb(10, 10, 10);
+    background-color:rgb(215, 231, 177);
+
+}
+button:hover{
+    background-color:rgba(240, 243, 241, 0.959);
+}
+
+
+
+  /*
+Formulario
+*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container {
+    border-radius: 13px;
+    border-color: black;
+    background-color: #ffffff;
+    padding: 20px;
+    size: 60px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+  
+
+    /*
+el QUERY para cuanndo la aplicacion se ve en escritorio
+si se pasa el ancho de 850px
+*/
+@media(min-width: 850px){
+    /*
+Para que el HEADER se quede en su lugar
+mientras mira hacia abajo la pagina
+*/
+    header{
+        
+        width: 100%;
+        height: auto;
+    }
+    
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    #hero h1{
+        font-size: 60px;
+
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30px;
+    }
+}
+
+footer{
+   
+    padding: 10px;
+}

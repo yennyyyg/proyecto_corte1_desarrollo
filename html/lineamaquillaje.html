@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquillaje</title>
+    <link rel="stylesheet" href="../style/lineamquillaje.css">
+</head>
+<body>
+    <header>
+        <div class = "container">
+           <p class = "logo">Linea de Maquillaje </p>
+            <nav>
+                 <a href="intro.html">Inicio</a>
+                 <a href="#main">Nuestros Productos</a>
+                 <a href="#contact">Contactanos</a>
+             </nav>
+
+        
+        </div>
+    </header>
+    <div class="main" id="main">
+
+
+        <h2>Linea de Maquillaje </h2>
+
+        <div id="myBtnContainer">
+         <button class="btn active" onclick="filterSelection('all')"> Todos los productos</button>
+         <button class="btn" onclick="filterSelection('nature')"> Bases </button>
+         <button class="btn" onclick="filterSelection('cars')"> Pestañinas </button>
+         <button class="btn" onclick="filterSelection('people')"> Rubores </button>
+        </div>
+       
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+         <div class="column nature">
+           <div class="content">
+             <img src="../media/maquillaje/base2.jpg" alt="Mountains" style="width:100%">
+             <h4>Base Aika</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+         <div class="column nature">
+           <div class="content">
+           <img src="../media/maquillaje/base3.jpg" alt="Lights" style="width:100%">
+             <h4>Base Aqua</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+         <div class="column nature">
+           <div class="content">
+           <img src="../media/maquillaje/base 4.jpg" alt="Nature" style="width:100%">
+             <h4>Base Matte</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+         
+         <div class="column cars">
+           <div class="content">
+             <img src="../media/maquillaje/pes1.jpg" alt="Car" style="width:100%">
+             <h4></h4>
+             <p>Pestañina Serum</p>
+             <button> Comprar </button>
+           </div>
+         </div>
+         <div class="column cars">
+           <div class="content">
+           <img src="../media/maquillaje/pes2.jpg" alt="Car" style="width:100%">
+             <h4>Pestañina Ruby Rose</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+         <div class="column cars">
+           <div class="content">
+           <img src="../media/maquillaje/pes3.jpg" alt="Car" style="width:100%">
+             <h4>Pestañina Vogue</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+       
+         <div class="column people">
+           <div class="content">
+             <img src="../media/maquillaje/rub3.jpg" alt="Car" style="width:100%">
+             <h4>Rubor Fenty</h4>
+             <button> Comprar </button>
+           </div>
+         </div>
+       
+
+        
+        <!-- END GRID -->
+        </div>
+       
+        <!-- END MAIN -->
+        </div>
+
+        <div class="container" id="contact">
+            <h2>Contactanos! Nature Cosmetics </h2>
+            <form >
+              <div class="row">
+                <div class="col-25">
+                  <label for="fname">Nombre</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="lname">Apellido</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+                </div>
+              </div>
+              <div class="col-25">
+                <label for="lname">Correo</label>
+              </div>
+              <div class="col-75">
+                <input type="email" id="lcorreo" name="Correo" placeholder="Tu correo..">
+              </div>
+              
+              <div class="row">
+                <div class="col-25">
+                  <label for="country">Pais</label>
+                </div>
+                <div class="col-75">
+                  <select id="country" name="country">
+                    <option value="australia">Colombia</option>
+                    <option value="canada">Ecuador</option>
+                    <option value="usa">Mexico</option>
+                    <option value="usa">USA</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-25">
+                  <label for="subject">Comentarios sobre nuestros productos</label>
+                </div>
+                <div class="col-75">
+                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <input type="submit" value="Enviar">
+              </div>
+            </form>
+          </div>
+
+
+  
+
+        <footer>
+            <div class="container">
+                <p>
+                    &copy; Nature Cosmetics 2023
+                </p>
+            </div>
+            
+        </footer>
+
+
+       
+        <script>
+        filterSelection("all")
+        function filterSelection(c) {
+         var x, i;
+         x = document.getElementsByClassName("column");
+         if (c == "all") c = "";
+         for (i = 0; i < x.length; i++) {
+           w3RemoveClass(x[i], "show");
+           if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+         }
+        }
+       
+        function w3AddClass(element, name) {
+         var i, arr1, arr2;
+         arr1 = element.className.split(" ");
+         arr2 = name.split(" ");
+         for (i = 0; i < arr2.length; i++) {
+           if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+         }
+        }
+       
+        function w3RemoveClass(element, name) {
+         var i, arr1, arr2;
+         arr1 = element.className.split(" ");
+         arr2 = name.split(" ");
+         for (i = 0; i < arr2.length; i++) {
+           while (arr1.indexOf(arr2[i]) > -1) {
+             arr1.splice(arr1.indexOf(arr2[i]), 1);     
+           }
+         }
+         element.className = arr1.join(" ");
+        }
+       
+       
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+         btns[i].addEventListener("click", function(){
+           var current = document.getElementsByClassName("active");
+           current[0].className = current[0].className.replace(" active", "");
+           this.className += " active";
+         });
+       }
+     </script>
+
+
+    </div>
+
+    
+ 
+    
+</body>
+</html>

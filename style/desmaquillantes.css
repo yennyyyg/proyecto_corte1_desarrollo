@@ -1,0 +1,326 @@
+
+
+*{
+    box-sizing: border-box;
+}
+
+/*
+Letra
+*/
+@font-face {
+    font-family: lato;
+    src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+    font-weight: bold;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: latog;
+    src: url(../fonts/Lobster/Lobster-Regular.ttf);
+}
+
+@font-face {
+    font-family: quetrial;
+    src: url(../fonts/Questrial/Questrial-Regular.ttf);
+}
+
+
+
+
+/*
+Ajustes generales de las letras
+*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+
+}
+.color_cambiar{
+    color:rgb(9, 122, 38) ;
+}
+
+  /*
+Para que no se salga del borde que se quiere poner el elemento
+*/
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color:rgb(255, 255, 255);
+   
+}
+button{
+    font-size: 100%;
+    font-weight: bold;
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(15, 15, 15, 0.5);
+    color: rgb(10, 10, 10);
+    background-color:rgb(215, 231, 177);
+
+}
+button:hover{
+    background-color:rgba(240, 243, 241, 0.959);
+}
+
+header .logo{
+
+    margin: 0;
+    padding: 25px 30px;
+  
+    font-size: 40px;
+    color: rgb(52, 122, 38);
+   
+
+  
+}
+.logo{
+    font-family:latog;
+    font-weight: bold
+    
+}
+
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+   
+}
+
+
+
+header a{
+    padding: 5px 12px;
+    color: black;
+    text-decoration: none;
+   
+    font-family:latog;
+    font-weight: bold
+}
+/*
+Para que al momento de colocar el cursor encima cambie de color 
+*/
+header a:hover{
+    color: rgb(9, 122, 38);
+}
+/* porductos scroll */
+#productosscroll {
+    background-color: rgb(215, 231, 177);
+
+}
+#productosscroll h1{
+    size: 0px;
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    
+} 
+
+.despiel{
+    color: rgb(15, 15, 15);
+    font-family:latog;
+    font-weight: bold;
+    text-align: center;
+    
+}
+#productosscroll img{
+    padding: 10px;
+
+}
+
+
+scroll-container {
+    display:inline-block;
+    width: 400px;
+    height: 450px;
+    overflow-y:scroll;
+    scroll-behavior: smooth; 
+    
+    
+
+}
+scroll-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 5em;
+  }
+
+
+  nav,
+  scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+  }
+  
+
+#Caraacteristicas-des .container{
+    text-align: center;
+    padding: 60px 6px;
+    
+}
+#Caraacteristicas-des h2{
+    color: rgb(2, 2, 2);
+    font-size: 30px;
+    font-family:latog;
+    font-weight: bold;
+
+}
+ul{ list-style:lower-roman;}
+
+#Caraacteristicas-des p{
+    padding: 10px;
+    font-family: quetrial;
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+
+}
+
+
+footer{
+    background-color: rgb(247, 218, 218);
+    padding: 10px;
+}
+
+/*
+el QUERY para cuanndo la aplicacion se ve en escritorio
+si se pasa el ancho de 850px
+*/
+@media(min-width: 850px){
+    /*
+Para que el HEADER se quede en su lugar
+mientras mira hacia abajo la pagina
+*/
+    header{
+      
+        width: 100%;
+        height: auto;
+        
+    }
+    
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    #hero h1{
+        font-size: 60px;
+
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30px;
+    }
+
+    scroll-container {
+        display:table-row;
+        width: 400px;
+        height: 450px;
+        overflow-y:scroll;
+        scroll-behavior: smooth; 
+
+        
+        
+    
+
+    }
+
+    scroll-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 5em;
+   }
+
+   
+  nav,
+  scroll-container {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+
+
+  }
+  #Caraacteristicas-des .container{
+    display: flex;
+    justify-content: space-evenly;}
+
+
+
+    #Caraacteristicas-des .contenedor_deimagen{
+        background-image: linear-gradient(
+            0deg,
+         rgba(50, 56, 52, 0.322),
+         rgba(50, 56, 52, 0.322)
+    
+        ), url("../media/desmaquillantes/sonriente.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 70%;
+       padding: 30px;
+    }
+
+}
+
+
+   
+
+
+
+/* imagen y boton
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 600px;
+    background-image: url("../media/desmaquillantes/señorapose.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
+
+
+#hero h1{
+    color:rgb(255, 255, 255);
+    font-family:latog;
+    font-weight: bold
+    
+
+}
+
+#hero button{
+    font-size: 20px;
+}
+*/
+
+
+
