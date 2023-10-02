@@ -3,6 +3,7 @@
 <head>
     
     <link rel="stylesheet" href="../style/desmaquillantes.css">
+    <link rel="stylesheet" href="../style/bootstrap.css">
    
     <title>Desmaquillantes Nature Cosmetics</title>
 </head>
@@ -18,56 +19,195 @@
              </nav>
         </div>
   </header>
+  <div id="dividir">
+     <h2>Desmaquillantes Naturales para ti!</h2>
+     
 
+  </div>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Suscribete para mas productos!
+</button>
 
-  <section class="productosss">
-    <div class="container">
-       
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">SUSCRIBETE</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail3" placeholder="Correo">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Nombre Completo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputPassword3" placeholder="Nombre Completo">
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Productos que me interesan</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    A base de Aceite 
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    A base de Agua 
+                  </label>
+                </div>
+              
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <div class="col-sm-2">Checkbox</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                <label class="form-check-label" for="gridCheck1">
+                  Example checkbox
+                </label>
+              </div>
+            </div>
+          </div>
+        
+        </form>
 
-  </section>
-
-  <section id="productosscroll">
-
-    <div class="container">
-
-        <h2 class="despiel"> Desmaquillantes para tu piel!</h2>
-
-        <scroll-container>
-            <h1> Desmaquillante de Aloe Vera</h1>
-            <scroll-page id="page-1">
-                <img src="../media/desmaquillantes/frasco2.jpg" alt="Desmaquillante de Aceite "> 
-            </scroll-page>
-            <button> Comprar</button>
-            <h1> Kit x50 pañitos</h1>
-            <scroll-page id="page-2">
-                <img src="../media/desmaquillantes/paños.jpg" alt="2">
-            </scroll-page>
-            <button> Comprar</button>
-
-            <h1> Kit paños + desmaquillante</h1>
-            <scroll-page id="page-3">
-                <img src="../media/desmaquillantes/kit.jpg" alt="">
-            </scroll-page>
-            <button> Comprar</button>
-
-            <h1> Desmaquillante Aceite</h1>
-            <scroll-page id="page-4">
-                <img src="../media/desmaquillantes/frasco1.jpg" alt="">
-            </scroll-page>
-            <button> Comprar</button>
-
-            <h1> Kit x30 pañitos</h1>
-            <scroll-page id="page-5">
-                <img src="../media/desmaquillantes/pañps2.jpg" alt="">
-            </scroll-page>
-            <button> Comprar</button>
-
-
-        </scroll-container>
-
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Enviar</button>
+      </div>
     </div>
+  </div>
+</div>
+  
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/frasco2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Serum Desmaquillante</h5>
+                  <h6>$40.000</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
 
-  </section>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/frasco1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Serum a base de Pepino</h5>
+                  <h6>$35.000</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/paños.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Paños x70</h5>
+                  <h6>$20.000</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/pañps2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Kit paños x 16</h5>
+                  <h6>$9.000</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/istockphoto-1179198848-1024x1024.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Serum Desmaquillante</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/istockphoto-1037506168-1024x1024.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+      </div>
+      <div class="cards-wrapper">
+        <div class="card" style="width: 18rem;">
+            <img src="../media/desmaquillantes/istockphoto-1328832167-1024x1024.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        <div class="cards-wrapper">
+            <div class="card" style="width: 18rem;">
+                <img src="../media/desmaquillantes/istockphoto-677711134-1024x1024.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+      </div>
+  </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+
+
+  
+
+   
+  
+
 
   <section id="Caraacteristicas-des">
      <div class="container">
@@ -82,21 +222,16 @@
              adecuada regeneración celular, algo que puede llevar asociada la aparición de acné. Si te desmaquillas correctamente todos los días estarás previniendo su llegada.
         </p>
       <p>
-
         Cuando logras hacer responsablemente una rutina de limpieza facial, retiras todas las barreras contaminantes y permites que tu piel se oxigene. De esta manera, te aseguras que se regenere adecuadamente. Además, evitas granos e infecciones en la cara, conservarás la hidratación, 
         elasticidad y luminosidad de tu piel por más tiempo.
       </p>
-      <p>
-        Otra de las consecuencias de no limpiar nuestra piel adecuadamente es el envejecimiento de la misma. Además, también se produce una pérdida de elasticidad e hidratación, así como la aparición de manchas en la piel.
-
-La piel, al igual que el resto del cuerpo, necesita nutrirse. Si no retiras el maquillaje, el sudor, el polvo y la contaminación que acumula nuestra piel durante el día, tu piel no se nutrirá adecuadamente y no permitirá la oxigenación de la misma, aunque utilices la mejor crema hidratante del mercado.
-      </p>
+      
            
                
      </div>
     </div>
  </section>
-
+ 
  <footer>
     <div class="container">
         <p>
@@ -108,13 +243,7 @@ La piel, al igual que el resto del cuerpo, necesita nutrirse. Si no retiras el m
  </footer>
 
  
-
-  
-
- 
-
-
-
+ <script src="../js/bootstrap.bundle.min.js"></script>
 
 
     

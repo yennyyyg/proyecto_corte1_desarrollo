@@ -261,18 +261,6 @@ header a:hover{
   
     
 }
-.carta:nth-child(4){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        
-    )
-    ,url("../media/hero-banner-2.jpg");
-    
-    
-    
-}
 
 #porquecomprar .container{
 
@@ -452,7 +440,12 @@ El block hace que el parrafo se vea en un bloque
         font-size: 2em;
 
     }
-    
+    #buscartienda button{
+        font-size: 3em;
+
+
+
+    }
  
     footer{
         background-color: rgb(247, 218, 218);
