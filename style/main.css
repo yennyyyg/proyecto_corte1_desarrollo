@@ -310,7 +310,7 @@ footer{
 el QUERY para cuanndo la aplicacion se ve en escritorio
 si se pasa el ancho de 850px
 */
-@media(min-width: 850px){
+@media(min-width: 640px){
     /*
 Para que el HEADER se quede en su lugar
 mientras mira hacia abajo la pagina
