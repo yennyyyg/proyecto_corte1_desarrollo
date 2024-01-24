@@ -1,0 +1,33 @@
+
+#primero{
+    padding-bottom: 10px;
+}
+.pequeño{
+    width: 20%;
+}
+.grande{
+    width: 100%;
+}
+
+.important{
+    font-weight: bold;
+    font-size: xx-large;
+}
+.normal{
+    width:80%;
+}
+button{
+    flex: auto;
+}
+.rosa{
+    background-color: rosybrown;
+}
+.azul{
+    background-color: aquamarine;
+}
+.morado{
+    background-color: violet;
+}
+.blanco{
+    background-color: white;
+}

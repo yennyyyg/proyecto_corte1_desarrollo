@@ -99,7 +99,10 @@ header a{
     font-weight: bold;
     color: black;
 }
-
+.row{
+  flex-direction:row;
+  align-items: center;
+}
 
 body {
     background-color: rgb(215, 231, 177);
@@ -111,20 +114,32 @@ body {
 .main {
     max-width: 900px;
     margin: auto;
+    
 }
   
 h1 {
     font-size: 50px;
     word-break: break-all; }
+
   
 .row {
     margin: 20px -16px;
   }
   
+h2{
+  font-family:latog;
+  font-weight: bold;
+
+}
+
+h4{
+  font-family:latog;
+  font-weight: bold;
+}
   /* Add padding BETWEEN each column */
 .row,
 .row > .column {
-    padding: 10px;
+    padding: 30px;
   }
   
   /* Create three equal columns that floats next to each other */
@@ -154,11 +169,14 @@ h1 {
   
   /* Style the buttons */
 .btn {
-    border: none;
+    border:#ffffff;
     outline: none;
     padding: 12px 16px;
     background-color: white;
     cursor: pointer;
+    
+
+
   }
   
 .btn:hover {
@@ -173,7 +191,8 @@ h1 {
   /* The "show" class is added to the filtered elements */
   button{
     font-size: 100%;
-    font-weight: bold;
+    font-family:latog;
+    
     padding: 10px 10px;
     border-radius: 20px;
     border: 2px solid rgba(0,0,0,0.3);
@@ -187,7 +206,17 @@ button:hover{
 }
 
 
-
+#enviar:hover{
+  background-color: rgba(240, 243, 241, 0.959);
+  
+  
+}
+#enviar{
+  padding: 20px;
+  font-family:latog;
+  font-weight: bold
+  
+}
   /*
 Formulario
 */
@@ -251,6 +280,16 @@ input[type=text], select, textarea {
       width: 100%;
       margin-top: 0;
     }
+
+    .containertabladatos{
+
+      padding: 30px;
+     
+      background-color: azure;
+     
+     
+    
+    }
   }
 
 
@@ -285,9 +324,85 @@ mientras mira hacia abajo la pagina
         padding-bottom: 0;
         padding-right: 30px;
     }
+    .containertabladatos{
+
+      padding: 30px;
+     
+     
+    
+    }
+    #tabla-datos{
+      width: 50%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        
+    
+    }
+   
+}
+
+#dataTable{
+  background-color:white;
+  
+}
+#formulario-container {
+  border-radius: 13px;
+  border-color: black;
+  background-color: #ffffff;
+  padding: 30px;
+  size: 40px;
+}
+
+#tabla-datos{
+  width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+}
+/* Estilo de las celdas del encabezado */
+#tabla-datos th {
+  background-color:rgb(215, 231, 177);
+  border: 1px solid #1a1919;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Estilo de las celdas de datos */
+#tabla-datos td {
+  border: 1px solid #0f0f0f;
+  padding: 5px;
+}
+
+/* Estilo de las filas impares */
+#tabla-datos tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+/* Estilo de las filas impares */
+#tabla-datos tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Estilo de los botones en la última columna */
+#tabla-datos .editar-btn,
+#tabla-datos .eliminar-btn {
+  background-color: #eeeeee;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  size: 20px;
+  
+ 
+}
+
+
+#tabla-datos .editar-btn:hover,
+#tabla-datos .eliminar-btn:hover {
+  background-color: #90c993;
 }
 
 footer{
    
     padding: 10px;
 }
+

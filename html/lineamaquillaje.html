@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquillaje</title>
+    <link rel="stylesheet" href="../style/bootstrap.css">
     <link rel="stylesheet" href="../style/lineamquillaje.css">
+    <script src="../js/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -12,9 +16,9 @@
         <div class = "container">
            <p class = "logo">Linea de Maquillaje </p>
             <nav>
-                 <a href="intro.html">Inicio</a>
+                 <a href="../intro.html">Inicio</a>
                  <a href="#main">Nuestros Productos</a>
-                 <a href="#contact">Contactanos</a>
+                 <a href="#formulario-container">Contactanos</a>
              </nav>
 
         
@@ -55,6 +59,13 @@
              <button> Comprar </button>
            </div>
          </div>
+         <div class="column nature">
+          <div class="content">
+            <img src="../media/maquillaje/base2.jpg" alt="Mountains" style="width:100%">
+            <h4>Base Aika</h4>
+            <button> Comprar </button>
+          </div>
+        </div>
          
          <div class="column cars">
            <div class="content">
@@ -78,6 +89,15 @@
              <button> Comprar </button>
            </div>
          </div>
+
+         <div class="column cars">
+          <div class="content">
+            <img src="../media/maquillaje/pes1.jpg" alt="Car" style="width:100%">
+            <h4></h4>
+            <p>Pestañina Serum</p>
+            <button> Comprar </button>
+          </div>
+        </div>
        
          <div class="column people">
            <div class="content">
@@ -95,58 +115,223 @@
         <!-- END MAIN -->
         </div>
 
-        <div class="container" id="contact">
-            <h2>Contactanos! Nature Cosmetics </h2>
-            <form >
-              <div class="row">
-                <div class="col-25">
-                  <label for="fname">Nombre</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-25">
-                  <label for="lname">Apellido</label>
-                </div>
-                <div class="col-75">
-                  <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
-                </div>
-              </div>
-              <div class="col-25">
-                <label for="lname">Correo</label>
-              </div>
-              <div class="col-75">
-                <input type="email" id="lcorreo" name="Correo" placeholder="Tu correo..">
-              </div>
-              
-              <div class="row">
-                <div class="col-25">
-                  <label for="country">Pais</label>
-                </div>
-                <div class="col-75">
-                  <select id="country" name="country">
-                    <option value="australia">Colombia</option>
-                    <option value="canada">Ecuador</option>
-                    <option value="usa">Mexico</option>
-                    <option value="usa">USA</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-25">
-                  <label for="subject">Comentarios sobre nuestros productos</label>
-                </div>
-                <div class="col-75">
-                  <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <input type="submit" value="Enviar">
-              </div>
-            </form>
-          </div>
+        <script src="../js/lineamaquillaje.js"> </script>
+
+       
+
+
+<!-- Formulario para agregar nuevos datos -->
+<div id="formulario-container">
+  <h2>Suscribete para recibir Descuentosss!! de Nature Cosmetics!:</h2>
+  <form id="formulario">
+      <label for="idPro">ID:</label>
+      <input type="text" id="idPro" disabled >
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
+      <label for="descripcion">Apellido:</label>
+      <input type="text" id="descripcion" required>
+     
+      <label for="cantidad">Telefono:</label>
+      <input type="number" id="cantidad" required>
+      
+      <label for="precio">Correo:</label>
+      <input type="email" id="precio" required>
+      <label for="marca">Comentarios sobre nuestros productos</label>
+      <input type="text" id="marca" required>
+      <button type="submit">Guardar</button>
+     
+  </form>
+</div>
+<!-- Agrega una nueva caja de texto para el ID de búsqueda -->
+<label for="buscarId">Buscar por ID:</label>
+<input type="text" id="buscarId">
+<button onclick="buscarProductos()">Buscar</button>
+
+
+<!-- Contenedor para mostrar y editar los datos -->
+<div id="datos-container">
+  <h2>Productos:</h2>
+  <table  id="tabla-datos">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Telefono:</th>
+              <th>Correo</th>
+              <th>Comentarios</th>
+              <th>Acciones</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Aquí se agregarán las filas con datos -->
+      </tbody>
+  </table>
+</div>
+
+<!-- Script AJAX -->
+<script>
+
+  $(document).ready(function() {
+      cargarDatos();
+  });
+  
+  function cargarDatos() {
+      var apiUrl = 'http://127.0.0.1:8000/api/maquillaje';
+
+      $.ajax({
+          url: apiUrl,
+          type: 'GET',
+          dataType: 'json',
+          success: function(data) {
+              $('#tabla-datos tbody').empty();
+
+              $.each(data, function(index, item) {
+                  var row = '<tr>' +
+                              '<td>' + item.id + '</td>' +
+                              '<td>' + item.nombre + '</td>' +
+                              '<td>' + item.descripcion + '</td>' +
+                              '<td>' + item.cantidad + '</td>' +
+                              '<td>' + item.precio + '</td>' +
+                              '<td>' + item.marca + '</td>' +
+                              '<td>' +
+                                  '<button class="editar-btn" data-id="' + item.id + '">Editar</button>' +
+                                  '<button class="eliminar-btn" data-id="' + item.id + '">Eliminar</button>' +
+                              '</td>' +
+                            '</tr>';
+                  $('#tabla-datos tbody').append(row);
+              });
+          },
+          error: function(error) {
+              console.log('Error al obtener productos:', error);
+          }
+      });
+  }
+
+  
+
+  $('#formulario').submit(function(event) {
+      event.preventDefault();
+
+      var id = $('#idPro').val();
+      var nombre = $('#nombre').val();
+      var descripcion = $('#descripcion').val();
+      var cantidad = $('#cantidad').val();
+      var precio = $('#precio').val();
+      var marca = $('#marca').val();
+      var apiUrl='';
+      var method ='';
+      if(id == undefined || id == ''){
+           apiUrl = 'http://127.0.0.1:8000/api/maquillaje';
+           method = 'POST'
+      }else{
+          apiUrl = 'http://127.0.0.1:8000/api/maquillaje/'+ id;
+           method = 'PUT'
+      }
+     
+
+      $.ajax({
+          url: apiUrl,
+          type: method,
+          data: {
+              nombre: nombre,
+              descripcion: descripcion,
+              cantidad: cantidad,
+              precio: precio,
+              marca: marca
+          },
+          success: function() {
+              cargarDatos();
+              $('#idPro').val('');
+              $('#nombre').val('');
+              $('#descripcion').val('');
+              $('#cantidad').val('');
+              $('#precio').val('');
+              $('#marca').val('');
+              alert("Datos enviados, gracias!");
+            
+          },
+          error: function(error) {
+              console.log('Error al agregar producto:', error);
+          }
+      });
+  });
+
+  $('#tabla-datos').on('click', '.editar-btn', function() {
+  
+      // Obtener la fila correspondiente
+      var fila = $(this).closest('tr');
+
+      // Obtener datos de la fila
+      var id = fila.find('td:eq(0)').text();
+      var nombre = fila.find('td:eq(1)').text();
+      var descripcion = fila.find('td:eq(2)').text();
+      var cantidad = fila.find('td:eq(3)').text();
+      var precio = fila.find('td:eq(4)').text();
+      var marca = fila.find('td:eq(5)').text();
+     
+      // Obtén más datos según tus columnas
+
+      // Llenar el formulario con los datos
+      $('#idPro').val(id);
+      $('#nombre').val(nombre);
+      $('#descripcion').val(descripcion);
+      $('#cantidad').val(cantidad);
+      $('#precio').val(precio);
+      $('#marca').val(marca);
+     
+      // Llena más campos según tus datos
+
+      // Muestra el formulario
+    
+     
+  });
+
+  $('#tabla-datos').on('click', '.eliminar-btn', function() {
+      var id = $(this).data('id');
+      var apiUrl = 'http://127.0.0.1:8000/api/maquillaje/' + id;
+
+      $.ajax({
+          url: apiUrl,
+          type: 'DELETE',
+          success: function() {
+              cargarDatos();
+          },
+          error: function(error) {
+              console.log('Error al eliminar producto:', error);
+          }
+      });
+  });
+</script>
+
+        <div class="Redessociales">
+          <h2>Redes Sociales</h2>
+             <!-- Formulario para ingresar los datos de redes sociales -->
+    <form id="socialMediaForm">
+      <label for="platform">Plataforma:</label>
+      <select id="platform">
+          <option value="facebook">Facebook</option>
+          <option value="twitter">Twitter</option>
+          <option value="instagram">Instagram</option>
+          <!-- Agrega más opciones para otras redes sociales -->
+      </select><br>
+
+      <label for="username">Nombre de usuario o enlace:</label>
+      <input type="text" id="username" required><br>
+
+      <button type="button" id="generateQRButton">Generar Código QR</button>
+  </form>
+
+  <!-- Contenedor para mostrar el código QR generado -->
+  <div id="qrCodeContainer"></div>
+
+        </div>
+
+
+ 
+
+
+    
 
 
   
@@ -212,7 +397,7 @@
     </div>
 
     
- 
+    <script src="../js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
